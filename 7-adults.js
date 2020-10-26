@@ -12,9 +12,42 @@ const ppl = [
   {name: 'Willow Smith', age: 17}
 ];
 
-adults(ppl); // => [ 'Khalid Robinson', 'Post Malone' ]
+adults(ppl); // => [ 'Khalid Robinson', 'Ariel Winter', 'Post Malone' ]
 ***********************************************************************/
 
+// function adults(people) {
+//   const oldies = people.filter((person => {
+//     return person.age >= 18
+//   }))
+
+//   const justNames = oldies.map((person) => {
+//     return person.name
+//   })
+
+//   return justNames
+// }
+
 function adults(people) {
-  
+  // filter portion
+  let oldies = []
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].age >= 18) {
+      oldies.push(people[i])
+    }
+  }
+
+  // map portion
+  let justNames = []
+  for (let i = 0; i < oldies.length; i++) {
+    justNames.push(oldies[i].name)
+  }
+
+  return justNames
 }
+
+
+
+
+
+
+
